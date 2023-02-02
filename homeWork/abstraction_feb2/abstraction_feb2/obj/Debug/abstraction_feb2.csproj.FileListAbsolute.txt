@@ -1,0 +1,8 @@
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\bin\Debug\abstraction_feb2.exe.config
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\bin\Debug\abstraction_feb2.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\bin\Debug\abstraction_feb2.pdb
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\obj\Debug\abstraction_feb2.csproj.AssemblyReference.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\obj\Debug\abstraction_feb2.csproj.SuggestedBindingRedirects.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\obj\Debug\abstraction_feb2.csproj.CoreCompileInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\obj\Debug\abstraction_feb2.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\homeWork\abstraction_feb2\abstraction_feb2\obj\Debug\abstraction_feb2.pdb
