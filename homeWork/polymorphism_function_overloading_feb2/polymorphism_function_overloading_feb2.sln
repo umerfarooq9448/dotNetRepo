@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "polymorphism_function_overloading_feb2", "polymorphism_function_overloading_feb2\polymorphism_function_overloading_feb2.csproj", "{5C4E1386-129E-4B69-A741-15B9960D9CDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C4E1386-129E-4B69-A741-15B9960D9CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4E1386-129E-4B69-A741-15B9960D9CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4E1386-129E-4B69-A741-15B9960D9CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4E1386-129E-4B69-A741-15B9960D9CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CD7E3E1-0EE1-4BF8-8CBD-151BAC142AE4}
+	EndGlobalSection
+EndGlobal
