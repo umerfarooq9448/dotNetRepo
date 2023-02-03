@@ -1,0 +1,8 @@
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\bin\Debug\string_feb3.exe.config
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\bin\Debug\string_feb3.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\bin\Debug\string_feb3.pdb
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\obj\Debug\string_feb3.csproj.AssemblyReference.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\obj\Debug\string_feb3.csproj.SuggestedBindingRedirects.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\obj\Debug\string_feb3.csproj.CoreCompileInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\obj\Debug\string_feb3.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\string_feb3\string_feb3\obj\Debug\string_feb3.pdb
