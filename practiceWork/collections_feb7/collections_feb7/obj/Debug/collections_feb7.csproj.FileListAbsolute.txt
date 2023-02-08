@@ -1,0 +1,8 @@
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\bin\Debug\collections_feb7.exe.config
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\bin\Debug\collections_feb7.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\bin\Debug\collections_feb7.pdb
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\obj\Debug\collections_feb7.csproj.AssemblyReference.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\obj\Debug\collections_feb7.csproj.SuggestedBindingRedirects.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\obj\Debug\collections_feb7.csproj.CoreCompileInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\obj\Debug\collections_feb7.exe
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\collections_feb7\collections_feb7\obj\Debug\collections_feb7.pdb
