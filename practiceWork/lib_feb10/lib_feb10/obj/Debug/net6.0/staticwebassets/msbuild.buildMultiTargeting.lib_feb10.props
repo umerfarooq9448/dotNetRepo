@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\lib_feb10.props" />
+</Project>

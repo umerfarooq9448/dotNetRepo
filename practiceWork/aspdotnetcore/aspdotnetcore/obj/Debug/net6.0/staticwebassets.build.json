@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kcYaAUwZRZMZXqxZnDaBuLKx0h52vg/OTXydJuljjAI=",
+  "Source": "aspdotnetcore",
+  "BasePath": "_content/aspdotnetcore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
