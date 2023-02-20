@@ -1,0 +1,14 @@
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\bin\Debug\net6.0\CQRS Employee.deps.json
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\bin\Debug\net6.0\CQRS Employee.runtimeconfig.json
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\bin\Debug\net6.0\CQRS Employee.dll
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\bin\Debug\net6.0\CQRS Employee.pdb
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.csproj.AssemblyReference.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.AssemblyInfoInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.AssemblyInfo.cs
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.csproj.CoreCompileInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.dll
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\refint\CQRS Employee.dll
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.pdb
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\CQRS Employee.genruntimeconfig.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\CQRS Employee\CQRS Employee\obj\Debug\net6.0\ref\CQRS Employee.dll
