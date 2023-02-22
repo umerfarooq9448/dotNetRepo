@@ -53,7 +53,7 @@ namespace CQRSMoviTest_feb17.Tests
 
             //assert
 
-            Assert.Equal(result, m);
+            Assert.Equal(resul);
 
             
         

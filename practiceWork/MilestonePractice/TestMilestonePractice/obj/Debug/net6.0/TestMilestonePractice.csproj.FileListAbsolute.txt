@@ -1,0 +1,6 @@
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\obj\Debug\net6.0\TestMilestonePractice.csproj.AssemblyReference.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\obj\Debug\net6.0\TestMilestonePractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\obj\Debug\net6.0\TestMilestonePractice.AssemblyInfoInputs.cache
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\obj\Debug\net6.0\TestMilestonePractice.AssemblyInfo.cs
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\MilestonePractice\TestMilestonePractice\obj\Debug\net6.0\TestMilestonePractice.csproj.CoreCompileInputs.cache

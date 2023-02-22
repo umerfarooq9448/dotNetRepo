@@ -6,6 +6,7 @@ C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\Employ
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\EmployeeSecurity.dll
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\EmployeeSecurity.pdb
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\Humanizer.dll
+C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\XN187DK\OneDrive - EY\Desktop\dotNetWork\dotNetRepo\practiceWork\EmployeeSecurity\EmployeeSecurity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
