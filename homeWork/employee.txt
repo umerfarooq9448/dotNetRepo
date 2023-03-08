@@ -1,0 +1,441 @@
+---------------------------Service------------------------------------------------------------------------------------------------
+ base_url = "http://localhost:3000/Employee"
+  constructor(private httpclient:HttpClient) { }
+
+  getAllEmployees(){
+   return this.httpclient.get<Employee>(this.base_url)
+  }
+
+  addEmployee(emp:Employee){
+   return this.httpclient.post( this.base_url,emp)
+  }
+
+  deleteEmployee(id:number){
+    return this.httpclient.delete(this.base_url+"/"+id)
+  }  
+  
+  updateEmployee(id:number,emp:Employee){
+    return this.httpclient.put(this.base_url+"/"+id,emp)
+  }
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------component----------------------------------------------------------------------------------------------------
+
+--------Libraries--------
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Employee } from 'src/app/Employee';
+import { ApiserviceService } from 'src/app/services/apiservice.service';
+import {MatTableModule,MatTableDataSource} from '@angular/material/table';
+import {MatPaginatorModule,MatPaginator} from '@angular/material/paginator';
+import {MatSortModule,MatSort} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HttpErrorResponse } from '@angular/common/http';
+import {MatDialog} from '@angular/material/dialog'
+import {FormControl, Validators} from '@angular/forms';
+
+--------------------------------
+
+ 
+  name = new FormControl('', [Validators.required]);
+  salary = new FormControl('', [Validators.required]);
+  designation = new FormControl('', [Validators.required]);
+
+-----------------------------------------set up the table-------------------------------------------------------
+  public employeeList!:any;
+  public dataSource!: MatTableDataSource<Employee>;
+  displayedColumns: string[]=['id',"Name","Salary", "Designation","Operations"]
+  @ViewChild(MatPaginator) paginator!: MatPaginator
+  @ViewChild(MatSort) sort!:MatSort;
+
+
+  employee:Employee={
+    id:0,
+    Name:"",
+    Salary:0,
+    Designation:""
+  }
+
+  tempEmployee:Employee={
+    id:0,
+    Name:"",
+    Salary:0,
+    Designation:""
+  };
+  
+
+
+
+
+
+  constructor(private service:ApiserviceService) { }
+
+  ngOnInit(): void {
+    this.getAllEmployees()
+  }
+
+------------------------------setup data source-------------------------------------
+
+  getAllEmployees(){
+    this.service.getAllEmployees().subscribe((resp)=>{
+      this.employeeList = resp
+      console.log(this.employeeList)
+
+      this.dataSource = new MatTableDataSource(this.employeeList)
+      this.dataSource.paginator = this.paginator
+      this.dataSource.sort = this.sort
+
+    },(error: HttpErrorResponse)=>{
+      console.error(error)
+    }
+    
+    )
+    
+  }
+
+  deleteEmployee(id:number){
+    this.service.deleteEmployee(id).subscribe((resp)=>{
+      console.log(resp)
+      this.getAllEmployees()
+    },
+    (error:HttpErrorResponse)=>{
+      console.error(error)
+    }
+    )
+  }
+  //method to edit and employee----------------->
+  editEmployee(){
+    this.service.updateEmployee(this.tempEmployee.id,this.employee).subscribe((resp)=>{
+      console.log(resp)
+    },(error:HttpErrorResponse)=>{
+      console.error(error)
+    }
+    )
+  }
+
+  getEmployee(emp:Employee){
+    
+    this.tempEmployee = emp
+    console.log(this.tempEmployee)
+  }
+
+  public addEmployee(){
+    console.log(this.employee)
+     this.service.addEmployee(this.employee).subscribe((resp)=>{
+      console.log(resp)
+      this.getAllEmployees()
+      
+    },(error:HttpErrorResponse)=>{
+      console.error(error)
+    }
+    )
+  }
+
+
+
+
+-------------------------------------------------------Apply filters-----------------------------------------------------
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+
+
+----------------------------------------------------Validations----------------------------------------------------------------
+  getErrorMessage() {
+    if (this.name.hasError('required')) {
+      return 'You must enter a value';
+    }
+    if (this.salary.hasError('required')) {
+      return 'You must enter a value';
+    }
+    if (this.designation.hasError('required')) {
+      return 'You must enter a value';
+    }
+    
+    return "Enter a value"
+    
+  }
+
+
+
+-------------------------------------------------------Html code--------------------------------------------------------------------
+
+
+<div class="container mt-5" style=" width:fit-content; justify-content: space-around;" >
+<div style="display: flex; justify-content: space-between;">
+<mat-form-field>
+    <mat-label>Search</mat-label>
+    <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Umer" #input>
+  </mat-form-field>
+  <button style="height: fit-content;" mat-raised-button color="primary" data-toggle="modal" data-target="#addEmployee">Add Employee</button>
+</div> 
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header appColor> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header appColor> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.Name}} </td>
+      </ng-container>
+  
+      <!-- Salary Column -->
+      <ng-container matColumnDef="Salary">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header appColor> Salary </th>
+        <td mat-cell *matCellDef="let row"> {{row.Salary|currency: 'INR'}} </td>
+      </ng-container>
+  
+      <!-- Designation Column -->
+      <ng-container matColumnDef="Designation">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header appColor> Designation </th>
+        <td mat-cell *matCellDef="let row"> {{row.Designation}} </td>
+      </ng-container>
+
+      <!-- operation Column -->
+      <ng-container matColumnDef="Operations">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header appColor> Operations </th>
+        <td mat-cell *matCellDef="let row">
+          <button (click)="deleteEmployee(row.id)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon" >
+          <i class="fa fa-trash"></i>
+        </button>
+        <button (click)="getEmployee(row)"  mat-icon-button color="primary" aria-label="Example icon button with a open in new tab icon" data-toggle="modal" data-target="#updateEmployee">
+             <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  
+</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Update Employee model-->
+  <!-- Modal -->
+  <div class="modal fade" id="updateEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Employee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           
+                <div>
+                  <form #updateEmployeedetails="ngForm" (ngSubmit)="editEmployee()">
+                      <div class="row">
+                          <div class="col-md-6" >
+                              <div class="example-container" >
+      
+                                  <mat-form-field appearance="fill" style="width: 29rem">
+                                    
+                                    <input matInput  [formControl]="name" required [(ngModel)] =employee.Name value="{{tempEmployee.Name}}">
+                                    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+                                  </mat-form-field>
+                                  
+                                  
+                                </div>
+                                <div class="example-container">
+      
+                                  <mat-form-field appearance="fill">
+                                    
+                                    <input matInput type="number" [formControl]="salary" required [(ngModel)] =employee.Salary value="{{tempEmployee.Salary}}">
+                                    <mat-error *ngIf="salary.invalid">{{getErrorMessage()}}</mat-error>
+                                  </mat-form-field>
+                                  
+                                  
+                                </div>
+                                <div class="example-container">
+      
+                                  <mat-form-field appearance="fill">
+                                    <mat-label>Enter Designation</mat-label>
+                                    <input matInput type="text"  [formControl]="designation" required [(ngModel)] =employee.Designation value="{{tempEmployee.Designation}}" >
+                                    <mat-error *ngIf="designation.invalid">{{getErrorMessage()}}</mat-error>
+                                  </mat-form-field>
+                                  
+                                  
+                                  
+                                  
+                                </div>
+                                
+                          </div>
+                          
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary" >Submit</button>
+                        </div>
+                  </form>
+                  
+                </div>
+              
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--add Employee model-->
+  <!-- Modal -->
+  <div class="modal fade" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <form #addEmployeedetails="ngForm" (ngSubmit)="addEmployee()">
+                <div class="row">
+                    <div class="col-md-6" >
+                        <div class="example-container" >
+
+                            <mat-form-field appearance="fill" style="width: 29rem">
+                              <mat-label>Enter Name</mat-label>
+                              <input matInput  [formControl]="name" required [(ngModel)] =employee.Name >
+                              <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                            
+                            
+                          </div>
+                          <div class="example-container">
+
+                            <mat-form-field appearance="fill">
+                              <mat-label>Enter Salary</mat-label>
+                              <input matInput type="number" [formControl]="salary" required [(ngModel)] =employee.Salary>
+                              <mat-error *ngIf="salary.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                            
+                            
+                          </div>
+                          <div class="example-container">
+
+                            <mat-form-field appearance="fill">
+                              <mat-label>Enter Designation</mat-label>
+                              <input matInput type="text"  [formControl]="designation" required [(ngModel)] =employee.Designation>
+                              <mat-error *ngIf="designation.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                            
+                            
+                            
+                            
+                          </div>
+                          
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                  </div>
+            </form>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+----------------------------------------------------------Css Code--------------------------------------------------------------------------
+th{
+    font-size: 20px;
+    
+}
+td{
+    height: 5rem;
+    width: 7rem;
+}
+
+mat-form-field{
+    width: 29rem;
+}
+
+
+-------------------------------------------------------------links---------------------------------------------------------------------------
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+-------------------------------------------------------------------directive--------------------------------------------------
+  constructor(private ref:ElementRef) { 
+    this.ref.nativeElement.style.color='green';
+    
+    
+  }
+
+-------------------------------------------------------------------employee json-------------------------------------------------
+{
+  "Employee": [
+    {
+      "id": 1,
+      "Name": "Umer",
+      "Salary": 60000,
+      "Designation": "Senior Analyst"
+    },
+    {
+      "id": 2,
+      "Name": "Farooq",
+      "Salary": 45000,
+      "Designation": "Senior Analyst"
+    },
+    {
+      "id": 3,
+      "Name": "Sharddha",
+      "Salary": 45000,
+      "Designation": "Senior Analyst"
+    },
+    {
+      "id": 4,
+      "Name": "Umer",
+      "Salary": 50000,
+      "Designation": "Senior Analyst"
+    }
+  ]
+}
